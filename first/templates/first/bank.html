@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>Payment Portal</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+  <h2>Confirm Payment</h2>
+
+  <ul class="nav nav-tabs">
+
+    <li class="active"><a data-toggle="tab" href="#home">Credit Card</a></li>
+
+    <li><a data-toggle="tab" href="#menu1">Debit Card</a></li>
+
+    <li><a data-toggle="tab" href="#menu2">Netbanking</a></li>
+
+    <li><a data-toggle="tab" href="#menu3">COD</a></li>
+
+  </ul>
+
+
+
+  <div class="tab-content">
+
+    <div id="home" class="tab-pane fade in active">
+
+      <h3>Payment</h3>
+
+      <form action="" method="POST">
+          Cardholder Name: <input type="text" name="name" placeholder="Shreyangi Prasad"><br><br>
+          Card Number: <input type="text" name="cardNo" placeholder="1234-5678-0912-3456"><br><br>
+          Expiry Date: <input type="date" name="expiryDate"><br><br>
+          CVV: <input type="number" name="cvv"><br><br>
+          <button type="submit">Confirm</button>
+      </form>
+
+    </div>
+
+    <div id="menu1" class="tab-pane fade">
+
+      <h3>Menu 1</h3>
+
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    </div>
+
+    <div id="menu2" class="tab-pane fade">
+
+      <h3>Menu 2</h3>
+
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+
+    </div>
+
+    <div id="menu3" class="tab-pane fade">
+
+      <h3>Menu 3</h3>
+
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<!--<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pay Bank</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="src/firstPage.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script  src="src/bankCtrl.js"></script>
+</head>
+
+<body ng-controller="loginCtrl">
+    <a href="#">{{amount}}</a>
+    <div class="wrapper">
+        <form class="form-checkout" action="?" method="post">
+            <h2 class="title">Checkout</h2>
+            <h3 class="total">{{amount}}</h3>
+            <div class="payment-select">
+                <h3>Payment Type</h3>
+                <input class="r-type r-visa" type="radio" name="payment-type" id="p-visa" value="visa" checked="checked"/>
+                <label class="p-label lbl-visa" for="p-visa"></label>
+                <input class="r-type r-mcard" type="radio" name="payment-type" id="p-mcard" value="mcard"/>
+                <label class="p-label lbl-mcard" for="p-mcard"></label>
+                <input class="r-type r-amex" type="radio" name="payment-type" id="p-amex" value="amex"/>
+                <label class="p-label lbl-amex" for="p-amex"></label>
+                <input class="r-type r-disc" type="radio" name="payment-type" id="p-disc"/>
+                <label class="p-label lbl-disc" for="p-disc"></label>
+                <div class="selector"></div>
+            </div>
+            <div class="card">
+                <div class="card-type"></div>
+                <div class="card-info">
+                    <input class="c-info-input c-in-num" type="text" name="card-num" placeholder="Card Number" maxlength="16"/>
+                    <div>
+                        <input class="c-info-input c-in-name" type="text" name="name" placeholder="Cardholder's Name"/>
+                        <input class="c-info-input c-in-date-m" type="text" name="date-m" placeholder="mm" maxlength="2"/><span class="slash">/</span>
+                        <input class="c-info-input c-in-date-y" type="text" name="date-m" placeholder="yy" maxlength="2"/>
+                    </div>
+                    <input class="c-info-input c-in-cvv" type="text" name="cvv" placeholder="cvv" maxlength="3"/>
+                </div>
+            </div>
+            <div class="buttons">
+                <input class="btn-checkout" type="submit" name="btn-checkout" value="Pay Now"/><span class="or">or</span>
+                <button class="btn-paypal"></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <title>DELL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script type="text/javascript" src="src/firstPage.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+
+
+  <style>
+      .navbar{
+          margin-bottom: 0;
+          border-radius: 0;
+          background-color: #007DB8;
+          color: #FFF;
+          padding: 1% 0;
+          font-size: 1.2em;
+          border: 0;
+      }
+      .navbar-brand img{
+          float: left;
+          height: 250%;
+          margin-left: 200%;
+          margin-top: -15%;
+      }
+      .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
+          color: #FFF;
+          background-color:  #007DB8;
+      }
+      .navbar-inverse .navbar-nav li a{
+          color: #D5D5D5;
+      }
+      .form-inline{
+          margin-left: 30%;
+          margin-top: 0%;
+      }
+      .carousel slide{
+          opacity: 10%;
+      }
+      .container{
+          opacity: 10%;
+      }
+      .carousel-inner div img{
+          width: 100%;
+      }
+      #icon{
+          max-width: 250px;
+          max-height: 200px;
+          margin: 1% auto;
+      }
+      footer{
+          max-height: 10%;
+          width:100%;
+          background-color: #007DB8;
+          padding: 3%;
+          color: white;
+      }
+      .fa{
+          padding: 20px;
+          font-size: 30px;
+          color: #FFF;
+      }
+  </style>
+</head>
+<body ng-controller="loginCtrl">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="new.html">
+                <img src="images/logo.jpg" alt="logo">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Products</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Deals</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/slide1.png" alt="slide1">
+            </div>
+            <div class="item">
+                <img src="images/slide2.png" alt="slide1">
+            </div>
+            <div class="item">
+                <img src="images/slide3.png" alt="slide1">
+            </div>
+        </div>
+    </div>  <!-- EOD of Slider -->
+<!--    <div class="container text-center">
+        <h2>Browse Popular Products</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="images/prod1.png" alt="G7" id="icon">
+                <h3>{{desktop.name}}</h3>
+                <h3>Starting at ₹ {{desktop.price}}</h3>
+                <h5>{{desktop.desc}}</h5>
+                <button class="btn btn-primary" type="submit" ng-click="buy(desktop.name)">Buy Now</button>
+                <button class="btn btn-primary" type="submit" ng-click="add(desktop.name)">Add to Cart</button>
+            </div>
+            <div class="col-sm-4">
+                <img src="images/laptopG7.png" alt="G7" id="icon" style="max-height: 300px;">
+                <h3>{{laptop1.name}}</h3>
+                <h3>Starting at ₹ {{laptop1.price}}</h3>
+                <h5>{{laptop1.desc}}</h5>
+                <button class="btn btn-primary" type="submit" ng-click="buy(laptop1.name)">Buy Now</button>
+                <button class="btn btn-primary" type="submit" ng-click="add(laptop1.name)">Add to Cart</button>
+            </div>
+            <div class="col-sm-4">
+                <img src="images/prod3.jpg" alt="G7" id="icon">
+                <h3>{{laptop2.name}}</h3>
+                <h3>Starting at ₹ {{laptop2.price}}</h3>
+                <h5>{{laptop2.desc}}</h5>
+                <button class="btn btn-primary" type="submit" ng-click="buy(laptop2.name)">Buy Now</button>
+                <button class="btn btn-primary" type="submit" ng-click="add(laptop1.name)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" style="display: {{view}}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Confirm Payment</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Amount to be paid: ₹ {{amount}}</p>
+                    Card Number:   <input type="text" name="cardNo" value="{{cardNo}}"><br><br>
+                    Name on Card: <input type="text" name="cardholderName" value="{{cardholderName}}"><br><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Back</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="confirmPayment(amount)">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Contact Us</h3><br>
+                <h4>Address and Contact Info</h4>
+            </div>
+            <div class="col-sm-4">
+                <h3>Connect</h3><br>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+            <div class="col-sm-4">
+                <br><br><br><br><br><h5>2018 DELL</h5>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> -->

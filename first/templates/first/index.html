@@ -10,7 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-   <script type="text/javascript" src="static/first/src/firstPage.js"></script>
+   <!-- <script type="text/javascript" src="static/first/src/firstPage.js"></script>  -->
+<script type="text/javascript" src="{% static "static/first/src/firstPage.js" %}"></script>
+
 
   <style>
       .navbar{
@@ -112,7 +114,7 @@
                 <h3>5000 Series</h3>
                 <h3>Starting at ₹ 77,589.99</h3>
                 <h5>Gaming laptops engineered with NVIDIA, 8th Gen Intel® processors and a thin design for a sleek gaming experience</h5>
-                <button class="btn btn-primary" type="submit" ng-click="buy(desktop.name)">Buy Now</button>
+                <button class="btn btn-primary" type="submit" onclick="window.open('bank/1')">Buy Now</button>
                 <button class="btn btn-primary" type="submit" ng-click="add(desktop.name)">Add to Cart</button>
             </div>
             <div class="col-sm-4">
@@ -120,7 +122,7 @@
                 <h3>G7</h3>
                 <h3>Starting at ₹ 1,06,090.00</h3>
                 <h5>38.1 cm gaming laptop designed for a powerful, immersive in-game experience featuring NVIDIA GeForce GTX 1060 graphics and the latest 8th Gen Intel Quad-and-Hex Core™ CPUs, up to i9</h5>
-                <button class="btn btn-primary" type="submit" ng-click="buy(laptop1.name)">Buy Now</button>
+                <button class="btn btn-primary" type="submit" onclick="window.open('bank/2')">Buy Now</button>
                 <button class="btn btn-primary" type="submit" ng-click="add(laptop1.name)">Add to Cart</button>
             </div>
             <div class="col-sm-4">
@@ -128,7 +130,7 @@
                 <h3>XPS 15</h3>
                 <h3>Starting at ₹ 2,31,499.00</h3>
                 <h5>Dell's smallest 39.6cm (15) performance laptop with a stunning InfinityEdge display. Now featuring 8th Gen Intel® Core™ processors with up to 6 cores and 12 threads</h5>
-                <button class="btn btn-primary" type="submit" ng-click="buy(laptop2.name)">Buy Now</button>
+                <button class="btn btn-primary" type="submit" onclick="window.open('bank/3')">Buy Now</button>
                 <button class="btn btn-primary" type="submit" ng-click="add(laptop1.name)">Add to Cart</button>
             </div>
         </div>

@@ -9,18 +9,19 @@ class Login(models.Model):
 	def __str__(self):
 		return self.username
 
-class Inventory(models.Model):
-	model_No=models.CharField(max_length=20)
-	model_price=models.Integer()
-	model_availability=models.BooleanField()
 
-	def __str__(self):
-		return self.model_No
 
 class Cart(models.Model):
 	items=models.ManytoOne()
 
 """
+
+class Inventory(models.Model):
+	model_No=models.CharField(max_length=20)
+	model_price=models.IntegerField()
+
+	def __str__(self):
+		return self.model_No
 
 class First(models.Model):
 	text = models.CharField(max_length = 40)

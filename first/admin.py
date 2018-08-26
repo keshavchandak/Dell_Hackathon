@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-# from . models import first
-
-# admin.site.register(first)
 
 # # # Register your models here.
+from .models import Inventory
+admin.site.register(Inventory)
