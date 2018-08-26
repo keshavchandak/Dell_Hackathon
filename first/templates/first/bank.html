@@ -44,13 +44,18 @@
 
     <div id="home" class="tab-pane fade in active">
 
-      <h3>Payment</h3>
+      <h3>Payment Gateway</h3>
 
-      <form action="" method="POST">
+      <form action="{% url 'getBankDataURL' %}" method="POST" role="form">
+        {% csrf_token %}
           Cardholder Name: <input type="text" name="name" placeholder="Shreyangi Prasad"><br><br>
+          {{form.name}}
           Card Number: <input type="text" name="cardNo" placeholder="1234-5678-0912-3456"><br><br>
+          {{form.cardNo}}
           Expiry Date: <input type="date" name="expiryDate"><br><br>
+          {{form.date}}
           CVV: <input type="number" name="cvv"><br><br>
+          {{form.cvv}}
           <button type="submit">Confirm</button>
       </form>
 
