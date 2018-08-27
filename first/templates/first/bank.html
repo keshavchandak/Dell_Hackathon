@@ -16,82 +16,75 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <style>
+        p{
+            font-size: 1.2em;
+        }
+        input{
+            border-radius: 2px;
+            margin-left: 3px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+
+    </style>
+
 </head>
 
+<!-- This is the new -->
+
 <body>
-
-
-
-<div class="container">
-
-  <h2>Confirm Payment</h2>
-
-  <ul class="nav nav-tabs">
-
-    <li class="active"><a data-toggle="tab" href="#home">Credit Card</a></li>
-
-    <li><a data-toggle="tab" href="#menu1">Debit Card</a></li>
-
-    <li><a data-toggle="tab" href="#menu2">Netbanking</a></li>
-
-    <li><a data-toggle="tab" href="#menu3">COD</a></li>
-
-  </ul>
-
-
-
-  <div class="tab-content">
-
-    <div id="home" class="tab-pane fade in active">
-
-      <h3>Payment Gateway</h3>
-
-      <form action="{% url 'getBankDataURL' %}" method="POST" role="form">
-        {% csrf_token %}
-          Cardholder Name: <input type="text" name="name" placeholder="Shreyangi Prasad"><br><br>
-          {{form.name}}
-          Card Number: <input type="text" name="cardNo" placeholder="1234-5678-0912-3456"><br><br>
-          {{form.cardNo}}
-          Expiry Date: <input type="date" name="expiryDate"><br><br>
-          {{form.date}}
-          CVV: <input type="number" name="cvv"><br><br>
-          {{form.cvv}}
-          <button type="submit">Confirm</button>
-      </form>
-
+    <div class="container">
+        <div class="page-header">
+            <h1>ABC Bank</h1>
+        </div>
     </div>
+    <div class="container">
+        <h3>Confirm Payment</h3>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#creditCard">Credit Card</a></li>
+            <li><a data-toggle="tab" href="#debitCard">Debit Card</a></li>
+            <li><a data-toggle="tab" href="#netBanking">Netbanking</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="creditCard" class="tab-pane fade in active">
+                <h4>Pay Now</h4>
+                <form action="{% url 'getBankDataURL' %}" method="POST" role="form">
+                  {% csrf_token %}
+                  <p>Cardholder Name:   {{form.name}}<br><br></p>
+                  <p>Card Number:       {{form.cardNo}} <br><br></p>
+                  <p>Expiry Date:       {{form.date}} <br><br></p>
+                  <p>CVV:               {{form.cvv}}<br><br></p>
 
-    <div id="menu1" class="tab-pane fade">
-
-      <h3>Menu 1</h3>
-
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                </form>
+            </div>
+            <div id="debitCard" class="tab-pane fade">
+                <h4>Pay Now</h4>
+                <form action="{% url 'getBankDataURL' %}" method="POST" role="form">
+                  {% csrf_token %}
+                  <p>Cardholder Name:   {{form.name}}<br><br></p>
+                  <p>Card Number:       {{form.cardNo}} <br><br></p>
+                  <p>Expiry Date:       {{form.date}} <br><br></p>
+                  <p>CVV:               {{form.cvv}}<br><br></p>
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                </form>
+            </div>
+            <div id="netBanking" class="tab-pane fade">
+                <h4>Pay Now</h4>
+                <p>Select your Bank</p>
+                <select name="bankName">
+                    <option value="#">HDFC</option>
+                    <option value="#">ICICI</option>
+                    <option value="#">State Bank of India</option>
+                    <option value="#">Punjab National Bank</option>
+                </select>
+            </div>
+        </div>
     </div>
-
-    <div id="menu2" class="tab-pane fade">
-
-      <h3>Menu 2</h3>
-
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-
-    </div>
-
-    <div id="menu3" class="tab-pane fade">
-
-      <h3>Menu 3</h3>
-
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
 </body>
+
+
 
 </html>
 <!DOCTYPE html>
