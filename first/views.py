@@ -4,6 +4,8 @@ from django.views.decorators.http import require_POST
 from .models import First,Inventory
 from .forms import BankForm, SecurityForm
 from django.core.mail import send_mail
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def index(request):
@@ -50,3 +52,20 @@ def securitypage(request):
 	form=SecurityForm()
 	context={'form':form}
 	return render(request,'first/security.html',context)
+
+
+def register(request):
+	if request.method=='POST':
+		form=UserCreationForm(request.POST)
+
+		if form.is_valid():
+			form.save()
+			username=form.cleaned_data['username']
+			password=form.cleaned_data['password1']
+			user=authenticate(username=username, password=password)
+			login(request,user)
+			return redirect('index')
+	else:
+		form=UserCreationForm()
+	context={'form':form}
+	return render(request,'registration/register.html',context)

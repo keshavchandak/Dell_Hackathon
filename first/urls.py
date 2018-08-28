@@ -8,5 +8,6 @@ urlpatterns = [
     path('getBankDataURL',views.getBankData,name='getBankDataURL'),
     path('thankyou',views.thankyou,name='thankyou'),
     path('security',views.securitypage,name='security'),
-    path('getSecurityURL',views.getSecurityData,name='getSecurityURL')
+    path('getSecurityURL',views.getSecurityData,name='getSecurityURL'),
+    path('register',views.register,name='register')
 ]

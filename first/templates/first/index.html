@@ -185,7 +185,13 @@
                 <li class="dropdown"><a href="#">Services</a></li>
                 <li class="dropdown"><a href="#">Support</a></li>
                 <li class="dropdown"><a href="#">Deals</a></li>
-                <li class="dropdown"><a href="#" class="fa fa-user" style="font-size: 1.2em; margin-right: 5px;">  Welcome User</a>
+                <li class="dropdown"><a href="#" class="fa fa-user" style="font-size: 1.2em; margin-right: 5px;">  Welcome
+                  {% if user.is_authenticated %}
+                  {{user.username}}
+                  {% else %}
+                  User
+                  {% endif %}
+                </a>
                     <ul class="dropdown-content">
                         <li><a href="#">View Cart</a></li>
                         <li><a id = "myBtn" style="cursor: pointer;">Login</a></li>
@@ -277,13 +283,23 @@
             <div class="row">
                 <div class="col-sm-6">
                     <br><h2>Sign In</h2>
-                    <form>
+                    {% if form.errors %}
+                    <p>Something wrong </p>
+                    {% endif %}
+                    {% if next %}
+                    <p>Hey, You can't access that page</p>
+                    {% endif %}
+                    <form method="post" action="{% url 'login' %} ">
+                      {% csrf_token %}
+                      {{form.username}}
+                      {{form.password}}
                         <p>Email Address</p>
                         <input type="text" name="email">
+
                         <p>Password</p>
                         <input type="password" name="password">
                         <br><br>
-                        <button class="btn btn-primary">Sign In</button>
+                        <button class="btn btn-primary" type="submit"=value="login">Sign In</button>
                     </form>
                     <h2>Or sign in with</h2>
                     <a href="#" class="fa fa-facebook"></a>
@@ -294,17 +310,22 @@
                 <div class="verticalLine"></div>
                 <div class="col-sm-6">
                     <h2>Create An Account</h2>
-                    <form>
+                    <form method="post" action="{% url 'register' %}">
+                      {% csrf_token %}
+                      {% if form.errors %}
+                      <p>There are errors in the form </p>
+                      {% endif %}
+                      {{form}}
                         <p>First Name</p>
                         <input type="text" name="firstName">
                         <p>Last Name</p>
                         <input type="text" name="lastName">
-                        <p>Email Address</p>
-                        <input type="text" name="email">
+                        <p>Username</p>
+                        <input type="text" name="username">
                         <p>Password</p>
                         <input type="password" name="password">
                         <br><br>
-                        <button class="btn btn-primary">Create Account</button>
+                        <button class="btn btn-primary" type="submit" value="Register">Create Account</button>
                         <br><br>
                     </form>
                 </div>
