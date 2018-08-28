@@ -2,71 +2,156 @@
 <html lang="en" ng-app="app">
 <head>
   {% load static %}
-  <title>DELL</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-   <!-- <script type="text/javascript" src="static/first/src/firstPage.js"></script>  -->
-<script type="text/javascript" src="{% static "static/first/src/firstPage.js" %}"></script>
-
-
-  <style>
-      .navbar{
-          margin-bottom: 0;
-          border-radius: 0;
-          background-color: #007DB8;
-          color: #FFF;
-          padding: 1% 0;
-          font-size: 1.2em;
-          border: 0;
-      }
-      .navbar-brand img{
-          float: left;
-          height: 250%;
-          margin-left: 200%;
-          margin-top: -15%;
-      }
-      .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
-          color: #FFF;
-          background-color:  #007DB8;
-      }
-      .navbar-inverse .navbar-nav li a{
-          color: #D5D5D5;
-      }
-      .form-inline{
-          margin-left: 30%;
-          margin-top: 0%;
-      }
-      .carousel slide{
-          opacity: 10%;
-      }
-      .container{
-          opacity: 10%;
-      }
-      .carousel-inner div img{
-          width: 100%;
-      }
-      #icon{
-          max-width: 250px;
-          max-height: 200px;
-          margin: 1% auto;
-      }
-      footer{
-          max-height: 10%;
-          width:100%;
-          background-color: #007DB8;
-          padding: 3%;
-          color: white;
-      }
-      .fa{
-          padding: 20px;
-          font-size: 30px;
-          color: #FFF;
-      }
+    <title>DELL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="static/first/src/firstPage.js"></script>
+    <style>
+            .navbar{
+                margin-bottom: 0;
+                border-radius: 0;
+                background-color: #007DB8;
+                color: #FFF;
+                padding: 1% 0;
+                font-size: 1.2em;
+                border: 0;
+            }
+            .navbar-brand img{
+                float: left;
+                height: 250%;
+                margin-left: 200%;
+                margin-top: -15%;
+            }
+            .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
+                color: #FFF;
+                background-color:  #007DB8;
+            }
+            .navbar-inverse .navbar-nav li a{
+                color: #D5D5D5;
+            }
+            .form-inline{
+                margin-left: 30%;
+                margin-top: 0%;
+            }
+            .carousel slide{
+                opacity: 10%;
+            }
+            .container{
+                opacity: 10%;
+            }
+            .carousel-inner div img{
+                max-height: 500px;
+                width: 100%;
+            }
+            #icon{
+                max-width: 250px;
+                max-height: 200px;
+                margin: 1% auto;
+            }
+            .modal-content .nav .nav-tabs{
+                background-color: #007DB8;
+            }
+            footer{
+                max-height: 10%;
+                width:100%;
+                background-color: #007DB8;
+                padding: 3%;
+                color: white;
+            }
+            footer .fa{
+                padding: 20px;
+                font-size: 30px;
+                color: #FFF;
+            }
+            li .dropdown .dropdown-content{
+                display: inline-block;
+            }
+            .dropdown-content{
+                margin: 0px;
+                padding: 0px;
+                display: none;
+                position: absolute;
+                z-index: 1;
+                list-style: none;
+                background-color: #007DB8;
+            }
+            .dropdown-content a{
+                padding: 20px 16px;
+                display: block;
+                text-align: center;
+                color: white;
+                width: 200px;
+            }
+            .dropdown .dropdown-content li a:hover{
+                text-decoration: none;
+            }
+            .dropdown:hover .dropdown-content{
+                display: block;
+            }
+            .nav .navbar-nav .navbar-right li a .fa{
+                color: #D5D5D5;
+                font-size: 1.2em;
+            }
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .close:hover, .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .fa{
+                font-size: 30px;
+                padding: 10px;
+            }
+            p{
+                font-size: 1.2em;
+                margin: 3px;
+            }
+            input{
+                width: 300px;
+                border-radius: 2px;
+                margin: 3px;
+                padding-bottom: 5px;
+                padding-top: 5px;
+            }
+            .verticalLine {
+                border-left: 3px solid lightgrey;
+                height: 430px;
+                position: absolute;
+                left: 50%;
+                margin-left: -3px;
+                top: 0;
+                margin-top: 2%;
+            }
   </style>
 </head>
 <body ng-controller="loginCtrl">
@@ -79,11 +164,33 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavBar">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Products</a></li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Deals</a></li>
+                <li class="active dropdown"><a href="#" class="dropbtn">Products</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Desktops</a></li>
+                        <li><a href="#">Tablets</a></li>
+                        <li><a href="#">Workstations</a></li>
+                        <li><a href="#">Servers & Storage</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Solutions</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">View All Solutions</a></li>
+                        <li><a href="#">Internet of Things</a></li>
+                        <li><a href="#">Cloud</a></li>
+                        <li><a href="#">Big Data</a></li>
+                        <li><a href="#">Data Centre</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Services</a></li>
+                <li class="dropdown"><a href="#">Support</a></li>
+                <li class="dropdown"><a href="#">Deals</a></li>
+                <li class="dropdown"><a href="#" class="fa fa-user" style="font-size: 1.2em; margin-right: 5px;">  Welcome User</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">View Cart</a></li>
+                        <li><a id = "myBtn" style="cursor: pointer;">Login</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         </div>
@@ -96,13 +203,13 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="static/first/images/slide1.png" alt="slide1">
+                <img src="static/first/images/slide1.jpg" alt="slide1">
             </div>
             <div class="item">
-                <img src="static/first/images/slide2.png" alt="slide1">
+                <img src="static/first/images/slide2.jpg" alt="slide12">
             </div>
             <div class="item">
-                <img src="static/first/images/slide3.png" alt="slide1">
+                <img src="static/first/images/slide3.jpg" alt="slide3">
             </div>
         </div>
     </div>  <!-- EOD of Slider -->
@@ -110,52 +217,118 @@
         <h2>Browse Popular Products</h2>
         <div class="row">
             <div class="col-sm-4">
-                <img src="static/first/images/prod1.png" alt="G7" id="icon">
+                <img src="static/first/images/prod1.png" alt="G7" id="icon" style="max-height: 155px;">
                 <h3>5000 Series</h3>
-                <h3>Starting at ₹ 77,589.99</h3>
-                <h5>Gaming laptops engineered with NVIDIA, 8th Gen Intel® processors and a thin design for a sleek gaming experience</h5>
+                <h3>Starting at ₹ 77,589.9</h3>
+                <h5>Gaming laptops engineered with NVIDIA, 8th Gen Intel® processors and a thin design for a sleek gaming experience.</h5>
                 <button class="btn btn-primary" type="submit" onclick="window.open('bank/1')">Buy Now</button>
-                <button class="btn btn-primary" type="submit" ng-click="add(desktop.name)">Add to Cart</button>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
             </div>
             <div class="col-sm-4">
                 <img src="static/first/images/laptopG7.png" alt="G7" id="icon" style="max-height: 300px;">
                 <h3>G7</h3>
                 <h3>Starting at ₹ 1,06,090.00</h3>
-                <h5>38.1 cm gaming laptop designed for a powerful, immersive in-game experience featuring NVIDIA GeForce GTX 1060 graphics and the latest 8th Gen Intel Quad-and-Hex Core™ CPUs, up to i9</h5>
+                <h5>38.1 cm gaming laptop designed for a powerful, immersive in-game experience featuring NVIDIA GeForce GTX 1060 graphics and the latest 8th Gen Intel Quad-and-Hex Core™ CPUs, up to i9.</h5>
                 <button class="btn btn-primary" type="submit" onclick="window.open('bank/2')">Buy Now</button>
-                <button class="btn btn-primary" type="submit" ng-click="add(laptop1.name)">Add to Cart</button>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
             </div>
             <div class="col-sm-4">
                 <img src="static/first/images/prod3.jpg" alt="G7" id="icon">
                 <h3>XPS 15</h3>
                 <h3>Starting at ₹ 2,31,499.00</h3>
-                <h5>Dell's smallest 39.6cm (15) performance laptop with a stunning InfinityEdge display. Now featuring 8th Gen Intel® Core™ processors with up to 6 cores and 12 threads</h5>
+                <h5>Dell's smallest 39.6cm (15) performance laptop with a stunning InfinityEdge display. Now featuring 8th Gen Intel® Core™ processors with up to 6 cores and 12 threads.</h5>
                 <button class="btn btn-primary" type="submit" onclick="window.open('bank/3')">Buy Now</button>
-                <button class="btn btn-primary" type="submit" ng-click="add(laptop1.name)">Add to Cart</button>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
             </div>
         </div>
     </div>
-    <div class="modal" tabindex="-1" role="dialog" style="display: {{view}}">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Confirm Payment</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Amount to be paid: ₹ {{amount}}</p>
-                    Card Number:   <input type="text" name="cardNo" value="{{cardNo}}"><br><br>
-                    Name on Card: <input type="text" name="cardholderName" value="{{cardholderName}}"><br><br>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Back</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="confirmPayment(amount)">Confirm</button>
-                </div>
+                <div class="container text-center">
+        <h2>Accessories & Electronics</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="static/first/images/prod4.jpg" alt="bag" id="icon">
+                <h3>Dell Laptop Bag - Black</h3>
+                <h3>Starting at ₹ 519</h3>
+                <h5>This stylish black coloured bag has two zippered compartments. The main compartment comes with a laptop pocket which can hold a 38.1 cm big laptop.</h5>
+                <button class="btn btn-primary" type="submit" onclick="window.open('bank/4')">Buy Now</button>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
+            </div>
+            <div class="col-sm-4">
+                <img src="static/first/images/prod5.jpg" alt="mouse" id="icon" style="max-height: 200px;">
+                <h3>WM126 Wireless Optical Mouse</h3>
+                <h3>Starting at ₹ 698.00</h3>
+                <h5>This Dell Mouse is engineered implementing the latest technology to provide matchless user experience. Also, the compact and easy to hold design of this mouse enhances its utility.</h5>
+                <button class="btn btn-primary" type="submit" onclick="window.open('bank/5')">Buy Now</button>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
+            </div>
+            <div class="col-sm-4">
+                <img src="static/first/images/prod6.jpeg" alt="hardDisk" id="icon">
+                <h3>DW316 External Optical Drive</h3>
+                <h3>Starting at ₹ 1,840.00</h3>
+                <h5>The black Dell External Hard Drive can be easily plugged into your PC through its USB 3.0 cable. Moreover, this USB Hard Drive is automatically read by your device to complete its installation in no time.</h5>
+                <button class="btn btn-primary" type="submit" onclick="window.open('bank/6')">Buy Now</button>
+                <button class="btn btn-primary" type="submit">Add to Cart</button>
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="row">
+                <div class="col-sm-6">
+                    <br><h2>Sign In</h2>
+                    <form>
+                        <p>Email Address</p>
+                        <input type="text" name="email">
+                        <p>Password</p>
+                        <input type="password" name="password">
+                        <br><br>
+                        <button class="btn btn-primary">Sign In</button>
+                    </form>
+                    <h2>Or sign in with</h2>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                </div>
+                <div class="verticalLine"></div>
+                <div class="col-sm-6">
+                    <h2>Create An Account</h2>
+                    <form>
+                        <p>First Name</p>
+                        <input type="text" name="firstName">
+                        <p>Last Name</p>
+                        <input type="text" name="lastName">
+                        <p>Email Address</p>
+                        <input type="text" name="email">
+                        <p>Password</p>
+                        <input type="password" name="password">
+                        <br><br>
+                        <button class="btn btn-primary">Create Account</button>
+                        <br><br>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        modal.style.display = "block";
+    };
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        };
+    }
+    </script>
     <br><br>
     <footer class="container-fluid text-center">
         <div class="row">
@@ -169,13 +342,12 @@
                 <a href="#" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-google"></a>
                 <a href="#" class="fa fa-linkedin"></a>
-
             </div>
             <div class="col-sm-4">
                 <br><br><br><br><br><h5>2018 DELL</h5>
             </div>
-
         </div>
     </footer>
+
 </body>
 </html>
