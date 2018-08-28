@@ -1,8 +1,9 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, HttpResponse
 from django.views.decorators.http import require_POST
 
 from .models import First,Inventory
-from .forms import BankForm
+from .forms import BankForm, SecurityForm
+from django.core.mail import send_mail
 # Create your views here.
 
 def index(request):
@@ -23,13 +24,31 @@ def bank(request,model_no):
 def getBankData(request):
 	form=BankForm(request.POST)
 	print(request.POST['cvv'])
-	return redirect('index')
+	if int(request.POST['cvv'])==513:
+		return redirect('index')
+	else:
+		return HttpResponse('The CVV number does not match with Card Number')
 
+def email():
+	send_mail('Hello from Kshitij',
+	'Hello There, This is an automatic message from Kshitij Srivastava. If you have recieved this message then Email service is working :)',
+	'kshitij127@yahoo.co.in',['ks435@snu.edu.in'])
 
 def thankyou(request):
+	#email()
 	return render(request,'first/thankyou.html')
 
 #While going to the security page the object which is to be bought is lost
 
+@require_POST
+def getSecurityData(request):
+	form=SecurityForm(request.POST)
+	if request.POST['name_school']=='dps' and request.POST['mother_name']=='gita' and request.POST['first_car']=='nano':
+		return redirect('thankyou')
+	else:
+		return HttpResponse("Security Question is wrongly answered")
+
 def securitypage(request):
-	return render(request,'first/security.html')
+	form=SecurityForm()
+	context={'form':form}
+	return render(request,'first/security.html',context)

@@ -7,3 +7,8 @@ class BankForm(forms.Form):
     cardNo=forms.IntegerField()
     date=forms.DateField(input_formats='%m/%d/%y')
     cvv=forms.IntegerField()
+
+class SecurityForm(forms.Form):
+    name_school=forms.CharField(max_length=10)
+    mother_name=forms.CharField(max_length=10)
+    first_car=forms.CharField(max_length=10)

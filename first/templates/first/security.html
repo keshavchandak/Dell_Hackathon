@@ -47,13 +47,14 @@ and open the template in the editor.
             <p>To verify your identity and protect your account, please answer the following <strong>Security Questions</strong>.</p>
         </div><br>
         <div class="container">
-            <form action="" method="POST">
+            <form action="{% url 'getSecurityURL' %}" method="POST" role="form">
+              {%  csrf_token %}
                 <p>What was the name of your elementary / primary school?</p>
-                <input type="text" name="question1">
+                {{form.name_school}}
                 <p>What is your mother’s maiden name?</p>
-                <input type="text" name="question2">
+                {{form.mother_name}}
                 <p>What was the make of your first car?</p>
-                <input type="text" name="question3"><br><br>
+                {{form.first_car}}<br><br>
                 <button class="btn btn-primary" type="submit">Confirm</button>
             </form>
         </div>
