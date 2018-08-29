@@ -9,7 +9,8 @@ urlpatterns = [
     path('thankyou',views.thankyou,name='thankyou'),
     path('security',views.securitypage,name='security'),
     path('getSecurityURL',views.getSecurityData,name='getSecurityURL'),
-    path('register',views.register,name='register')
-    #path('alternatelogin',views.alternatelogin,name='alternatelogin'),
-    #path('alternateregister',views.alternateregister,name='alternateregister')
+    path('register',views.register,name='register'),
+    path('otp', views.otp, name = 'otp'),
+    path('error', views.error, name='error'),
+    path('contact', views.contact, name = 'contact')
 ]

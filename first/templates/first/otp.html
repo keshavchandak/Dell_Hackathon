@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function showOTP(){
+            document.getElementById('OTP').style.display = "block";
+            document.getElementById('password').style.display = "none";
+        }
+
+        function showPassword(){
+            document.getElementById('password').style.display = "block";
+            document.getElementById('OTP').style.display = "none";
+        }
+    </script>
+    <style>
+        p{
+            font-size: 1.2em;
+        }
+        input{
+            border-radius: 2px;
+            margin-left: 3px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>ABC Bank</h1>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Confirm Payment</h3>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#OTP">OTP</a></li>
+            <li><a data-toggle="tab" href="#password">Password</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="OTP" class="tab-pane fade in active">
+                <h4>An OTP has been sent to your registered mobile number.</h4>
+                <form action="{% url 'thankyou' %}" method="POST" role = "form">
+                    {% csrf_token %}
+                    Enter OTP:  {{form.otp}}<!-- <input type="password" name="otpValue"> -->
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                </form>
+            </div>
+            <div id="password" class="tab-pane fade">
+                <h4>Verify using password.</h4>
+                <form action="{% url 'thankyou' %}" method="POST" role = "form">
+                    {% csrf_token %}
+                    Enter Password: {{form.password}} <!-- <input type="password" name="passwordValue"> -->
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+</body>
+</html>
