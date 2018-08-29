@@ -2,13 +2,15 @@ from django.shortcuts import render,redirect, HttpResponse
 from django.views.decorators.http import require_POST
 
 from .models import First,Inventory
-from .forms import BankForm, SecurityForm
+from .forms import BankForm, SecurityForm ## LoginForm,RegisterForm
 from django.core.mail import send_mail
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def index(request):
+	#loginform= LoginForm()
+	#registerlogin=RegisterForm()
 	context = {}
 	return render(request, 'first/index.html', context)
 
@@ -69,3 +71,24 @@ def register(request):
 		form=UserCreationForm()
 	context={'form':form}
 	return render(request,'registration/register.html',context)
+
+
+""" To be used in Order Number formation
+import uuid
+
+Returns a random string of length string_length
+def my_random_string(string_length=10):
+	random = str(uuid.uuid4()) # Convert UUID format to a Python string.
+	random = random.upper() # Make all characters uppercase.
+	random = random.replace("-","") # Remove the UUID '-'.
+	return random[0:string_length] # Return the random string.
+
+print(my_random_string(6)) # For example, D9E50C
+
+"""
+
+	# def alternatelogin(request):
+	# 	return True
+	#
+	# def alternateregister(request):
+	# 	return True

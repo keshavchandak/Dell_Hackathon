@@ -120,6 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
 
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '3e88ab09d124b7'

@@ -10,4 +10,6 @@ urlpatterns = [
     path('security',views.securitypage,name='security'),
     path('getSecurityURL',views.getSecurityData,name='getSecurityURL'),
     path('register',views.register,name='register')
+    #path('alternatelogin',views.alternatelogin,name='alternatelogin'),
+    #path('alternateregister',views.alternateregister,name='alternateregister')
 ]

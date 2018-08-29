@@ -42,7 +42,13 @@
 
     <div class="container">
         <div class="page-header">
-            <h3>You are Purchasing: {{model.model_name}}<br></br> 
+            <h3>
+              {% if user.is_authenticated %}
+                Hello {{user.username}}!!<br></br>
+              {% else %}
+              Hello Guest<br></br>
+              {% endif %}
+              You are Purchasing: {{model.model_name}}<br></br>
             Total Price is : {{model.model_price}}</h3>
         </div>
     </div>
