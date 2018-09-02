@@ -8,11 +8,15 @@ This webapp detects fraud in a 2 step process. The first step uses a quick filte
 Step two uses the ensemble learning (combination of 3 algorithms- knn, logistic, adaboost ) to predict the fraud. If the fraud is deteced then futher more user authentication like security questions are required for transaction. If no fraud detected then it goes straight to the OTP page  
 
 Team Name: Four 4 One
+
 The Team Members:
 
 Ansh Tandon (UX and Data Preprocessing)
+
 Keshav Chandak (Machine Learning and Backend)
+
 Kshitij Srivastava (Backend, Database, User Authentication)
+
 Shreyangi Prasad (Frontend)
 
 ## File Name
