@@ -10,10 +10,10 @@ Step two uses the ensemble learning (combination of 3 algorithms- knn, logistic,
 Team Name: Four 4 One
 The Team Members:
 
-Ansh Tandon
-Keshav Chandak
-Kshitij Srivastava
-Shreyangi Prasad
+Ansh Tandon (UX and Data Preprocessing)
+Keshav Chandak (Machine Learning and Backend)
+Kshitij Srivastava (Backend, Database, User Authentication)
+Shreyangi Prasad (Frontend)
 
 ## File Name
 
@@ -26,9 +26,18 @@ Logistic.sav
 naivebayes.sav
 Knn.sav
 
-# Webapp
+## Webapp
 
 Contained in the First Folder
+templates folder contains HTML files used for rendering
+static/first folder contains the static files used in the HTML
+
+views.py contains the logic and for rendering the HTML files
+urls.py contains the url contained in the file
+models.py contains how data will be stored in the database
+forms.py conatins how user data will be taken from the user
+
+
 
 
 
