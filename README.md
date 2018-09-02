@@ -11,13 +11,13 @@ Team Name: Four 4 One
 
 The Team Members:
 
-Ansh Tandon (UX and Data Preprocessing)
+**Ansh Tandon (UX and Data Preprocessing)**
 
-Keshav Chandak (Machine Learning and Backend)
+**Keshav Chandak (Machine Learning and Backend)**
 
-Kshitij Srivastava (Backend, Database, User Authentication)
+**Kshitij Srivastava (Backend, Database, User Authentication)**
 
-Shreyangi Prasad (Frontend)
+**Shreyangi Prasad (Frontend)**
 
 ## File Name
 
@@ -25,20 +25,29 @@ Pre-processed data set for Classification
 sample.csv
 
 Models Trained using the scikit-learn and parameters of the model saved using pickle in these files
+
 Adaboost.sav
+
 Logistic.sav
+
 naivebayes.sav
+
 Knn.sav
 
 ## Webapp
 
 Contained in the First Folder
+
 templates folder contains HTML files used for rendering
+
 static/first folder contains the static files used in the HTML
 
 views.py contains the logic and for rendering the HTML files
+
 urls.py contains the url contained in the file
+
 models.py contains how data will be stored in the database
+
 forms.py conatins how user data will be taken from the user
 
 
